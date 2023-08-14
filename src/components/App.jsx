@@ -22,10 +22,11 @@ class App extends Component {
 
   componentDidMount() {
     const contacts = localStorage.getItem('contacts');
-    const parcedContacts = JSON.parse(contacts);
-
-    if (parcedContacts) {
-      this.setState({ contacts: parcedContacts });
+    if (contacts !== null) {
+      const parcedContacts = JSON.parse(contacts);
+      if (parcedContacts) {
+        this.setState({ contacts: parcedContacts });
+      }
     }
   }
 
